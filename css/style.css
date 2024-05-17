@@ -4,16 +4,22 @@
     box-sizing: border-box;
 }
 
+
 section#container{
-    width: 800px;
-    height: 800px;
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
     border: 2px solid black;
 }
 .casella{
     width: calc(100% / 10);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-bg.casella{
-    
+.attiva{
+    background-color: rgb(77, 127, 208);
 }

@@ -14,7 +14,7 @@ for (let index = 0; index < 100; index++) {
     sectionEl.appendChild(articleEl);
     // aggiungo addEvenentListener (click);
     articleEl.addEventListener("click", function bgClass() {
-        articleEl.classList.add('bg-casella');
+        articleEl.classList.add('attiva');
         console.log(articleEl.innerHTML);
     });
 
