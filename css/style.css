@@ -4,22 +4,35 @@
     box-sizing: border-box;
 }
 
-
+.flex{
+    display: flex;
+}
+nav.flex{
+    background-color: violet;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    padding: .5rem;
+}
+nav.flex > div.flex{
+    font-size: 1.5rem;
+}
 section#container{
     margin: 0 auto;
     width: 600px;
     height: 600px;
-    display: flex;
     flex-wrap: wrap;
     border: 2px solid black;
 }
 .casella{
     width: calc(100% / 10);
     border: 2px solid black;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 .attiva{
     background-color: rgb(77, 127, 208);
+}
+.tasto{
+
 }
