@@ -3,3 +3,17 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+section#container{
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+}
+.casella{
+    width: calc(100% / 10);
+}
+bg.casella{
+    
+}
