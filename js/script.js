@@ -7,17 +7,12 @@ const sectionEl = document.querySelector('section#container');
 const play = document.querySelector('button#play');
 const selectEl = document.querySelector("div > select");
 
-let facileEl = document.createElement("option");
-let mediaEl = document.createElement("option");
-let difficileEl = document.createElement("option");
+let facileEl = document.getElementById("facile");
+let mediaEl = document.getElementById("media");
+let difficileEl = document.getElementById("difficile");
 
-facileEl.append("Facile");
-mediaEl.append("Media");
-difficileEl.append("Difficile");
 
-selectEl.appendChild(facileEl);
-selectEl.appendChild(mediaEl);
-selectEl.appendChild(difficileEl);
+
 
 
 
@@ -87,7 +82,7 @@ facileEl.addEventListener("click", function () {
         let articleEl = document.createElement("article");
     
         // aggiungi una classe; 
-        articleEl.classList.add('casella', 'flex');
+        articleEl.classList.add('casella', 'flex', );
         // nel elemento article inserisco index;
         articleEl.append(n + 1);
     
@@ -111,6 +106,34 @@ facileEl.addEventListener("click", function () {
 })
 
 // inserisco un ciclo for che va da 0 a 100;
+function getGrid(cells, addNewClass) {
+    while (n < cells) {
+        // creo l'elemento article;
+        let articleEl = document.createElement("article");
+    
+        // aggiungi una classe; 
+        articleEl.classList.add('casella', 'flex');
+        // nel elemento article inserisco index;
+        articleEl.append(n + 1);
+    
+        // article figlio di section;
+        sectionEl.appendChild(articleEl);
+        
+        // aggiungo addEvenentListener (click);
+        articleEl.addEventListener("click", function () {
+            articleEl.classList.add('attiva');
+            console.log(articleEl.innerHTML);
+        });
+    
+    
+        play.addEventListener('click', function () {
+            articleEl.classList.remove('attiva');
+        })
+        console.log(articleEl);
+    
+        n += 1;
+    }
+}
 
 
 
