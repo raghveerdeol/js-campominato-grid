@@ -25,7 +25,6 @@ section#container{
     border: 2px solid black;
 }
 .casella{
-    width: calc(100% / 10);
     border: 2px solid black;
     justify-content: center;
     align-items: center;
@@ -40,15 +39,14 @@ section#container{
     color: white;
     border: none;
 }
-.casellaMedia{
-    width: calc(100% / 9);
-    border: 2px solid black;
-    justify-content: center;
-    align-items: center;
+.difficoltà-facile{
+    width: calc(100% / 10);
 }
-.casellaDifficile{
+.difficoltà-media{
+    width: calc(100% / 9);
+
+}
+.difficoltà-difficile{
     width: calc(100% / 7);
-    border: 2px solid black;
-    justify-content: center;
-    align-items: center;
+
 }

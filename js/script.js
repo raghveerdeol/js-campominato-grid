@@ -7,102 +7,24 @@ const sectionEl = document.querySelector('section#container');
 const play = document.querySelector('button#play');
 const selectEl = document.querySelector("div > select");
 
-let facileEl = document.getElementById("facile");
-let mediaEl = document.getElementById("media");
-let difficileEl = document.getElementById("difficile");
-
-
-
-
-
+let facileEl = document.getElementById("#facile");
+let mediaEl = document.getElementById("#media");
+let difficileEl = document.getElementById("#difficile");
+console.log(selectEl.value)
 
 let n = 0;
 
-mediaEl.addEventListener("click", function () {
-    while (n < 81) {
-        // creo l'elemento article;
-        let articleEl = document.createElement("article");
-    
-        // aggiungi una classe; 
-        articleEl.classList.add('casellaMedia', 'flex');
-        // nel elemento article inserisco index;
-        articleEl.append(n + 1);
-    
-        // article figlio di section;
-        sectionEl.appendChild(articleEl);
-        
-        // aggiungo addEvenentListener (click);
-        articleEl.addEventListener("click", function () {
-            articleEl.classList.add('attiva');
-            console.log(articleEl.innerHTML);
-        });
-    
-    
-        play.addEventListener('click', function () {
-            articleEl.classList.remove('attiva');
-        })
-        console.log(articleEl);
-    
-        n += 1;
-    }
+/* play.addEventListener("click", function () {
+    mediaEl = getGrid('81', "difficoltà-media");
 })
 
-difficileEl.addEventListener("click", function () {
-    while (n < 49) {
-        // creo l'elemento article;
-        let articleEl = document.createElement("article");
-    
-        // aggiungi una classe; 
-        articleEl.classList.add('casellaDifficile', 'flex');
-        // nel elemento article inserisco index;
-        articleEl.append(n + 1);
-    
-        // article figlio di section;
-        sectionEl.appendChild(articleEl);
-        
-        // aggiungo addEvenentListener (click);
-        articleEl.addEventListener("click", function () {
-            articleEl.classList.add('attiva');
-            console.log(articleEl.innerHTML);
-        });
-    
-    
-        play.addEventListener('click', function () {
-            articleEl.classList.remove('attiva');
-        })
-        console.log(articleEl);
-    
-        n += 1;
-    }
+play.addEventListener("click", function () {
+    difficileEl = getGrid("49", "difficoltà-difficile");
 })
+ */
+play.addEventListener("click", function () {
 
-facileEl.addEventListener("click", function () {
-    while (n < 100) {
-        // creo l'elemento article;
-        let articleEl = document.createElement("article");
-    
-        // aggiungi una classe; 
-        articleEl.classList.add('casella', 'flex', );
-        // nel elemento article inserisco index;
-        articleEl.append(n + 1);
-    
-        // article figlio di section;
-        sectionEl.appendChild(articleEl);
-        
-        // aggiungo addEvenentListener (click);
-        articleEl.addEventListener("click", function () {
-            articleEl.classList.add('attiva');
-            console.log(articleEl.innerHTML);
-        });
-    
-    
-        play.addEventListener('click', function () {
-            articleEl.classList.remove('attiva');
-        })
-        console.log(articleEl);
-    
-        n += 1;
-    }
+    facileEl = getGrid("100", "difficoltà-facile");
 })
 
 // inserisco un ciclo for che va da 0 a 100;
@@ -112,7 +34,8 @@ function getGrid(cells, addNewClass) {
         let articleEl = document.createElement("article");
     
         // aggiungi una classe; 
-        articleEl.classList.add('casella', 'flex');
+        articleEl.classList.add('casella', 'flex', addNewClass);
+        
         // nel elemento article inserisco index;
         articleEl.append(n + 1);
     
@@ -124,13 +47,7 @@ function getGrid(cells, addNewClass) {
             articleEl.classList.add('attiva');
             console.log(articleEl.innerHTML);
         });
-    
-    
-        play.addEventListener('click', function () {
-            articleEl.classList.remove('attiva');
-        })
-        console.log(articleEl);
-    
+        
         n += 1;
     }
 }
