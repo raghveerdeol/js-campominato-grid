@@ -7,12 +7,9 @@ const sectionEl = document.querySelector('section#container');
 const play = document.querySelector('button#play');
 const selectEl = document.querySelector("div > select");
 
-let facileEl = document.getElementById("#facile");
-let mediaEl = document.getElementById("#media");
-let difficileEl = document.getElementById("#difficile");
-console.log(selectEl.value)
 
-let n = 0;
+
+
 
 /* play.addEventListener("click", function () {
     mediaEl = getGrid('81', "difficoltà-media");
@@ -24,11 +21,14 @@ play.addEventListener("click", function () {
  */
 play.addEventListener("click", function () {
 
-    facileEl = getGrid("100", "difficoltà-facile");
+    getGrid(100, "difficoltà-facile", sectionEl);
+    console.log(selectEl.value)
 })
 
 // inserisco un ciclo for che va da 0 a 100;
-function getGrid(cells, addNewClass) {
+function getGrid(cells, addNewClass, containerEl) {
+    containerEl.innerHTML = "";
+    let n = 0;
     while (n < cells) {
         // creo l'elemento article;
         let articleEl = document.createElement("article");
