@@ -5,28 +5,37 @@
 
 const sectionEl = document.querySelector('section#container');
 const play = document.querySelector('button#play');
-const selectEl = document.querySelector("div > select");
+const selectEl = document.getElementById("difficoltà");
 
-
-
-
-
-/* play.addEventListener("click", function () {
-    mediaEl = getGrid('81', "difficoltà-media");
-})
 
 play.addEventListener("click", function () {
-    difficileEl = getGrid("49", "difficoltà-difficile");
-})
- */
-play.addEventListener("click", function () {
+    console.log(selectEl.value);
+    let cellNumber;
+    let className;
+    switch (selectEl.value) {
+        case '0':
+            cellNumber = 100;
+            className = "difficoltà-facile";
+            break;
+        case '1': 
+            cellNumber = 81;
+            className = 'difficoltà-media';
+            break;
+        case '2':
+            cellNumber = 49;
+            className = 'difficoltà-difficile';
+            break;
+        // default:
+        //     cellNumber = 100;
+        //     className = "difficoltà-facile"
+        //     break;
+    }
+    getGrid(sectionEl, cellNumber, className);
 
-    getGrid(100, "difficoltà-facile", sectionEl);
-    console.log(selectEl.value)
 })
 
 // inserisco un ciclo for che va da 0 a 100;
-function getGrid(cells, addNewClass, containerEl) {
+function getGrid(containerEl, cells, addNewClass) {
     containerEl.innerHTML = "";
     let n = 0;
     while (n < cells) {
