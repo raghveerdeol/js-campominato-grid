@@ -40,3 +40,15 @@ section#container{
     color: white;
     border: none;
 }
+.casellaMedia{
+    width: calc(100% / 9);
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+.casellaDifficile{
+    width: calc(100% / 7);
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}

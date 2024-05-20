@@ -21,32 +21,96 @@ selectEl.appendChild(difficileEl);
 
 
 
+let n = 0;
 
+mediaEl.addEventListener("click", function () {
+    while (n < 81) {
+        // creo l'elemento article;
+        let articleEl = document.createElement("article");
+    
+        // aggiungi una classe; 
+        articleEl.classList.add('casellaMedia', 'flex');
+        // nel elemento article inserisco index;
+        articleEl.append(n + 1);
+    
+        // article figlio di section;
+        sectionEl.appendChild(articleEl);
+        
+        // aggiungo addEvenentListener (click);
+        articleEl.addEventListener("click", function () {
+            articleEl.classList.add('attiva');
+            console.log(articleEl.innerHTML);
+        });
+    
+    
+        play.addEventListener('click', function () {
+            articleEl.classList.remove('attiva');
+        })
+        console.log(articleEl);
+    
+        n += 1;
+    }
+})
+
+difficileEl.addEventListener("click", function () {
+    while (n < 49) {
+        // creo l'elemento article;
+        let articleEl = document.createElement("article");
+    
+        // aggiungi una classe; 
+        articleEl.classList.add('casellaDifficile', 'flex');
+        // nel elemento article inserisco index;
+        articleEl.append(n + 1);
+    
+        // article figlio di section;
+        sectionEl.appendChild(articleEl);
+        
+        // aggiungo addEvenentListener (click);
+        articleEl.addEventListener("click", function () {
+            articleEl.classList.add('attiva');
+            console.log(articleEl.innerHTML);
+        });
+    
+    
+        play.addEventListener('click', function () {
+            articleEl.classList.remove('attiva');
+        })
+        console.log(articleEl);
+    
+        n += 1;
+    }
+})
+
+facileEl.addEventListener("click", function () {
+    while (n < 100) {
+        // creo l'elemento article;
+        let articleEl = document.createElement("article");
+    
+        // aggiungi una classe; 
+        articleEl.classList.add('casella', 'flex');
+        // nel elemento article inserisco index;
+        articleEl.append(n + 1);
+    
+        // article figlio di section;
+        sectionEl.appendChild(articleEl);
+        
+        // aggiungo addEvenentListener (click);
+        articleEl.addEventListener("click", function () {
+            articleEl.classList.add('attiva');
+            console.log(articleEl.innerHTML);
+        });
+    
+    
+        play.addEventListener('click', function () {
+            articleEl.classList.remove('attiva');
+        })
+        console.log(articleEl);
+    
+        n += 1;
+    }
+})
 
 // inserisco un ciclo for che va da 0 a 100;
-for (let index = 0; index < 100; index++) {
-    // creo l'elemento article;
-    let articleEl = document.createElement("article");
 
-    // aggiungi una classe; 
-    articleEl.classList.add('casella', 'flex');
-    // nel elemento article inserisco index;
-    articleEl.append(index + 1);
-
-    // article figlio di section;
-    sectionEl.appendChild(articleEl);
-    
-    // aggiungo addEvenentListener (click);
-    articleEl.addEventListener("click", function () {
-        articleEl.classList.add('attiva');
-        console.log(articleEl.innerHTML);
-    });
-
-
-    play.addEventListener('click', function () {
-        articleEl.classList.remove('attiva');
-    })
-    console.log(articleEl);
-}
 
 
